@@ -86,7 +86,7 @@ export function RecommendedPortfolio({ portfolioSummary, setView }: RecommendedP
                     </div>
 
                     <div className="space-y-1">
-                        <Button onClick={onDeploy} className="bg-[#363F72] w-full rounded-3xl hover:bg-[#363F72]/90 cursor-pointer">
+                        <Button disabled onClick={onDeploy} className="bg-[#363F72] w-full rounded-3xl hover:bg-[#363F72]/90 cursor-pointer">
                             Deploy Portfolio
                         </Button>
                         <Link href={"#"} className="text-sm text-[#717BBC] underline">learn more about these strategies</Link>

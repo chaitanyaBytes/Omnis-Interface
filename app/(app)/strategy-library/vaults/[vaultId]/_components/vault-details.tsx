@@ -12,6 +12,7 @@ import { StrategyRisk } from "./strategy-risk/strategy-and-risk"
 import { Postion } from "./position/position"
 import { AsterApiInput } from "./aster-api-input/aster-key-input"
 import { useAccount } from "wagmi"
+import { UserInstrctions } from "./user-instructions"
 
 interface VaultDetailProps {
     vaultId: string
@@ -114,6 +115,8 @@ export default function VaultDetail({ vaultId }: VaultDetailProps) {
                 {!hasRegisteredKeys && <AsterApiInput />}
 
                 {hasRegisteredKeys && <DepositWaithrawlCard />}
+
+                {<UserInstrctions />}
             </div>
         </div>
     )

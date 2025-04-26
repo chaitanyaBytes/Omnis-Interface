@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { logos } from "@/lib/icons"
+// import { logos } from "@/lib/icons"
 import Link from "next/link";
 
 export default function Home() {
@@ -10,16 +10,14 @@ export default function Home() {
         <div className="flex flex-col items-center justify-center space-y-6">
 
           <div className="flex flex-col items-center gap-2">
-            <logos.omnisBlack width={80} />
-            <div className="text-[5.5rem] font-semibold tracking-tight leading-none">
-              <p>Omnis AI</p>
-              <p>Portfolio Agent</p>
+            {/* <logos.omnisBlack width={80} /> */}
+            <div className="mt-10 text-[4rem] font-semibold tracking-tight leading-none">
+              <p>Intelligent DeFi Portfolio Management</p>
             </div>
           </div>
 
           <div className="text-center text-xl max-w-2xl mx-auto">
-            AI-powered DeFi strategist that builds and executes personalized portfolio strategies on-chain. Chat with our agent to create, deploy, and monitor custom trading strategies without writing code.
-          </div>
+            Set your goals — Omnis builds the on-chain trading portfolios, tailored to you. Manage risk and grow your DeFi portfolio automatically — without spreadsheets, guesswork, or coding.          </div>
           <Link href={"/sign-in"}>
             <Button className="px-6 py-6 text-xl rounded-3xl cursor-pointer text-center relative overflow-hidden bg-gradient-to-r from-[#000A3F] via-[#000A3F] to-[#6FB1FC] flex justify-center group/modal-btn">
               Launch App
@@ -35,7 +33,7 @@ export default function Home() {
 
             {/* Foreground content */}
             <div className="relative z-10 flex flex-col gap-2 items-center justify-center h-full text-white text-center">
-              <p className="text-7xl font-semibold">$1.2M</p>
+              <p className="text-7xl font-semibold">$12M</p>
               <p className="text-3xl">Total Value Locked</p>
             </div>
           </div>
@@ -47,7 +45,7 @@ export default function Home() {
 
             {/* Foreground content */}
             <div className="relative z-10 flex flex-col gap-2 items-center justify-center h-full text-white text-center">
-              <p className="text-7xl font-semibold">12</p>
+              <p className="text-7xl font-semibold">3</p>
               <p className="text-3xl">Strategy Count</p>
             </div>
           </div>

@@ -9,7 +9,7 @@ export default function Signin() {
                     <Image src={"/landing-asset.png"} alt={"blob"} width={400} height={300} className="-mt-8" />
 
                     <div className="-mt-16 text-3xl font-medium tracking-tight leading-none">
-                        Please connect Wallet to continue
+                        Please connect wallet to continue
                     </div>
                     <ConnectWalletButton />
                 </div>

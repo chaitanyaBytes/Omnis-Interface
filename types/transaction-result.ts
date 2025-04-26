@@ -6,5 +6,5 @@ export interface Transaction {
     gasPaid: number; // you could make this a number if you prefer
     strategiesActivated: number;
     totalStrategies: number;
-    chain: "Solana" | "Ethereum" | "BNB" | string;
+    chain: "BSC" | string;
 }

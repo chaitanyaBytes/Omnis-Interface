@@ -13,7 +13,7 @@ import { Filter } from "lucide-react"
 
 export function StrategyFilter() {
     return (
-        <Select>
+        <Select disabled>
             <SelectTrigger className="w-full rounded-3xl border-muted-foreground">
                 <div className="flex items-center gap-2">
                     <Filter size={20} />

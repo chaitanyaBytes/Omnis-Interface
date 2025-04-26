@@ -41,7 +41,7 @@ export const Loader = () => {
             </div>
 
             <div className="flex justify-center my-8 overflow-y-hidden pt-2">
-                <MultiStepLoader loadingStates={loadingStates} loading={loading} duration={5000} />
+                <MultiStepLoader loadingStates={loadingStates} loading={loading} duration={3000} />
             </div>
         </div>
     )

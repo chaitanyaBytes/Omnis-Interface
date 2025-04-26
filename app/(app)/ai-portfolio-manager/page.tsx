@@ -60,7 +60,7 @@ export default function AiPortfolioManager() {
         if (view === "loading") {
             setTimeout(() => {
                 setView("recommended");
-            }, 10 * 1000)
+            }, 9 * 1000)
         }
     }, [view])
 

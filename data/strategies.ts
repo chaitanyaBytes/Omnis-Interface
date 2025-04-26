@@ -3,13 +3,13 @@ import { StrategyInterface } from "@/types/strategy";
 export const dummyStrategies: StrategyInterface[] = [
     {
         id: "volume",
-        name: "Volume Bot",
+        name: "Aster Points Maximizer",
         strategy: "Earn Aster Rh Points",
         apy: "5.5%",
         currentTVL: 11317930.10,
         maxCapacity: 26000000,
         network: "Binance",
-        status: "HOT",
+        status: "NEW",
         capacity: 43.5, // Approximate percentage (currentTVL / maxCapacity * 100)
         maxCap: 26000000, // Same as maxCapacity
         // --- Other Plausible Demo Metrics ---

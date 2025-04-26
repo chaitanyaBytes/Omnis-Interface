@@ -5,6 +5,7 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { WalletStatus } from "./ui/wallet-status";
 import { MainNav } from "./main-nav";
+import { siteConfig } from "@/config/site";
 
 export const Header = () => {
     const path = usePathname();
@@ -24,9 +25,9 @@ export const Header = () => {
 
                     {path === "/" || path.includes("sign-in") ?
                         <div className="flex gap-4">
-                            <Link href={"/"}>Docs</Link>
-                            <Link href={"/"}>Github</Link>
-                            <Link href={"/"}>Support</Link>
+                            <Link href={siteConfig.links.docs} target="_blank">Docs</Link>
+                            <Link href={siteConfig.links.github} target="_blank">Github</Link>
+                            <Link href={siteConfig.links.twitter} target="_blank">Support</Link>
                         </div>
                         :
                         <WalletStatus />

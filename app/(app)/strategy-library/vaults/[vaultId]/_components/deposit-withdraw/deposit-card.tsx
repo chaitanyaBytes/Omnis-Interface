@@ -73,13 +73,13 @@ export const DepositCard = () => {
                     {!amount ? <Icons.usdt className="absolute right-2 bottom-1/4 w-6 h-6" /> : <X onClick={() => setAmount("")} className="absolute right-2 bottom-1/4 w-6 h-6 p-1 cursor-pointer text-zinc-800 rounded-full border border-zinc-700" />}
                 </div>
 
-                <div className="flex items-center justify-between my-2">
+                {/* <div className="flex items-center justify-between my-2">
                     <div className="flex gap-2 text-lg">
                         <p>Balance:</p>
                         <p>{isLoading ? <Skeleton className="h-4 w-6" /> : formatCurrency(currBalance)}</p>
                     </div>
                     <Button disabled={isLoading} type="button" onClick={() => setAmount(formatted)} className="rounded-full cursor-pointer px-2 py-1 text-sm bg-[#F4EBFF] text-[#6941C6] hover:bg-[#F4EBFF]/60">MAX</Button>
-                </div>
+                </div> */}
 
                 <div className="space-y-1 mt-6">
                     <div className="flex flex-row justify-between items-center">
