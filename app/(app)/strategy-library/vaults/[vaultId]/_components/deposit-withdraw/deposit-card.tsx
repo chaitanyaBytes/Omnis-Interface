@@ -5,17 +5,20 @@ import { Icons } from "@/lib/icons"
 import { TooltipText } from "@/components/ui/tooltip-text"
 import { X, ArrowRight } from "lucide-react"
 import { formatCurrency, formatNumber } from "@/lib/utils"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { DepositRules } from "./rules"
 import { useUsdtBalance } from "@/hooks/useUsdtBalance"
 import { Skeleton } from "@/components/ui/skeleton"
 import { useStartStrategy } from "../../_hooks/useStartStrategy"
 import { useAccount } from "wagmi"
 import { toast } from "sonner"
+import { useParams } from "next/navigation"
 
 export const DepositCard = () => {
+    const { vaultId } = useParams();
+
     const [amount, setAmount] = useState("");
-    const [strategyName, setStrategyName] = useState('normal_grid');
+    const strategyName = useState(vaultId);
     const [symbol, setSymbol] = useState('CRVUSDT');
     const { address } = useAccount()
 
@@ -26,6 +29,10 @@ export const DepositCard = () => {
     const currBalance = Number(formatted);
     const apy = 12.6;
     const vaultBalance = 0;
+
+    useEffect(() => {
+        console.log(strategyName[0])
+    }, [])
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -43,7 +50,7 @@ export const DepositCard = () => {
             await startStrategy({
                 wallet_address: address,
                 usdt_amount: Number(amount),
-                strategy_name: strategyName,
+                strategy_name: strategyName[0] as string, // Ensure type safety with type assertion
                 symbol
             })
             toast.success("Strategy Started Successfully");

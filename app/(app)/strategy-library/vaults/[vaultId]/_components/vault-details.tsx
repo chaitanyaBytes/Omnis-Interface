@@ -7,7 +7,7 @@ import VaultHeader from "./vault-header"
 import { DepositWaithrawlCard } from "./deposit-withdraw/deposit-withdrawl-card"
 import { VaultPerformance } from "./performance/vault-performance"
 import { VaultOverview } from "./working/vault-overview"
-import { useVaultStore } from "@/store/useVaultStore"
+import { useStrategyStore } from "@/store/useStrategyStore"
 import { StrategyRisk } from "./strategy-risk/strategy-and-risk"
 import { Postion } from "./position/position"
 import { AsterApiInput } from "./aster-api-input/aster-key-input"
@@ -18,9 +18,9 @@ interface VaultDetailProps {
 }
 
 export default function VaultDetail({ vaultId }: VaultDetailProps) {
-    const vault = useVaultStore((state) => state.vault);
-    const loading = useVaultStore((state) => state.loading);
-    const fetchVault = useVaultStore((state) => state.fetchVault);
+    const vault = useStrategyStore((state) => state.strategy);
+    const loading = useStrategyStore((state) => state.loading);
+    const fetchVault = useStrategyStore((state) => state.fetchStrategy);
     const [, setSelectedTab] = useState("vault-performance");
 
     const { address } = useAccount()
@@ -57,7 +57,7 @@ export default function VaultDetail({ vaultId }: VaultDetailProps) {
     return (
         <div className="py-6 grid grid-cols-3 gap-6">
             <div className="col-span-3 lg:col-span-2 space-y-6">
-                <VaultHeader vaultName={vault.name} highestApy={vault.highestApy} totalTvl={vault.totalTvl} capacity={vault.capacity} />
+                <VaultHeader vaultName={vault.name} highestApy={vault.highestApy} totalTvl={vault.maxCapacity} capacity={vault.capacity} />
 
                 <div className="space-y-6">
                     <Tabs defaultValue="vault-performance" className="w-full" onValueChange={setSelectedTab}>

@@ -46,7 +46,6 @@ export const StrategyCard = ({ strategy }: StrategyCardProps) => {
         <div className="flex flex-col items-center">
           <p className="text-sm font-medium">APY</p>
           <p className="text-2xl font-bold">{strategy.apy}</p>
-          <p className="text-sm text-[#EC4A0A]">{strategy.ntPoints}x</p>
         </div>
 
         <div className="flex flex-col items-center gap-0.5">
@@ -72,7 +71,7 @@ export const StrategyCard = ({ strategy }: StrategyCardProps) => {
         </div>
       </CardContent>
       <CardFooter className="flex justify-center">
-        <Link href={`${path}/vaults/1`}>
+        <Link href={`${path}/vaults/${strategy.id}`}>
           <Button className="rounded-full cursor-pointer bg-[#363F72] w-full hover:bg-[#363F72]/95">Start Earning</Button>
         </Link>
       </CardFooter>

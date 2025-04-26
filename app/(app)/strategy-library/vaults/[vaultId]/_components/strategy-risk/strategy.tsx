@@ -1,20 +1,20 @@
-import { useVaultStore } from "@/store/useVaultStore"
+import { useStrategyStore } from "@/store/useStrategyStore"
 
 export const Strategy = () => {
-    const vault = useVaultStore((state) => state.vault)
+    const vault = useStrategyStore((state) => state.strategy)
 
     return (
         <div className="space-y-10">
             <div className="bg-[#F4F7FF] space-y-4 rounded-lg py-4 px-5">
                 <div className="space-y-1">
-                    <h1 className="font-medium text-2xl">Leveraged JLP Yield Generation</h1>
-                    <p className="text-muted-foreground">The xJLP Vault employs an AI-driven strategy to optimize yields by leveraging JLP positions at 2x-3x. Jupiter Liquidity Provider (JLP) tokens.</p>
+                    <h1 className="font-medium text-2xl"> Normal Grid Yield Generation</h1>
+                    <p className="text-muted-foreground">The xUSDT Vault employs an AI-driven strategy to optimize yields by grid strategies.</p>
                 </div>
 
                 <div className="grid grid-cols-2 lg:grid-cols-4">
                     <div>
                         <p className="text-muted-foreground">Target Leverage</p>
-                        <p className="text-xl font-medium">2x-3x</p>
+                        <p className="text-xl font-medium">1x</p>
                     </div>
 
                     <div>
@@ -29,7 +29,7 @@ export const Strategy = () => {
 
                     <div>
                         <p className="text-muted-foreground">Strategy Type</p>
-                        <p className="text-xl font-medium">Delta Neutral</p>
+                        <p className="text-xl font-medium">Grid Trading</p>
                     </div>
                 </div>
             </div>
