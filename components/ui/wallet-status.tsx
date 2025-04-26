@@ -1,11 +1,6 @@
 "use client"
 
-import { useEffect, useState } from "react"
-import { useRouter } from "next/navigation"
-
-import { Skeleton } from "@/components/ui/skeleton"
 import { ConnectButton } from "@rainbow-me/rainbowkit"
-import { useAccount } from 'wagmi'
 
 export const WalletStatus = () => {
     // const router = useRouter()
@@ -30,6 +25,6 @@ export const WalletStatus = () => {
     // }
 
     return (
-        <ConnectButton />
+        <ConnectButton showBalance={false} chainStatus={"icon"} />
     )
 }

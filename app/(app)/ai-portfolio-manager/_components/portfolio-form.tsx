@@ -111,7 +111,7 @@ export function PortfolioForm({ onSubmit }: PortfolioFormProps) {
                                             <SelectContent>
                                                 <SelectItem value="Conservative">Low (max 5%)</SelectItem>
                                                 <SelectItem value="Moderate">Moderate (max 15%)</SelectItem>
-                                                <SelectItem value="Aggresive">High (max 30%)</SelectItem>
+                                                <SelectItem value="Aggressive">High (max 30%)</SelectItem>
                                             </SelectContent>
                                         </Select>
                                     </FormControl>

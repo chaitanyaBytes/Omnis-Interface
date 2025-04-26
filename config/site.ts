@@ -1,8 +1,8 @@
 export const siteConfig = {
     name: "omnis",
-    url: "",
-    ogImage: "",
-    description: "",
+    url: "https://omnis-interface.vercel.app/",
+    ogImage: "https://omnis-interface.vercel.app/og.png",
+    description: `Your crypto should work for you. Omnis${"'"}s AI-driven vaults auto-optimize leverage, manage risk, and compound profits—so you don${"'"}t have to.`,
     links: {
         twitter: "https://twitter.com",
         github: "https://github.com",

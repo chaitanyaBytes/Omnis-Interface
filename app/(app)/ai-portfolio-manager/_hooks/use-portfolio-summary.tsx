@@ -15,7 +15,8 @@ export const usePortfolioSummary = (setView: React.Dispatch<React.SetStateAction
         console.log(values)
         const recommendedPortfolio = generateRecommendedPortfolio(values);
         setPortfolioSummary(recommendedPortfolio); // show the result card
-        setView("recommended")
+        // todo: fix this later
+        setView("loading")
     }
 
     return { portfolioSummary, setPortfolioSummary, onSubmit }

@@ -11,6 +11,7 @@ import { dummyTransaction } from "@/data/dummy-transaction"
 import { useWalletAuth } from "@/hooks/useWalletAuth"
 import { useRouter } from "next/navigation"
 import { AiPortfolioManagerSkeleton } from "./_components/skeleton"
+import { Loader } from "./_components/loader"
 
 // export default function AiPortfolioManager() {
 //     return (
@@ -54,6 +55,15 @@ export default function AiPortfolioManager() {
         }
     }, [shouldRedirect])
 
+    // simulate a 10 second loader
+    useEffect(() => {
+        if (view === "loading") {
+            setTimeout(() => {
+                setView("recommended");
+            }, 10 * 1000)
+        }
+    }, [view])
+
     if (isLoading) {
         return <AiPortfolioManagerSkeleton />
     }
@@ -68,6 +78,10 @@ export default function AiPortfolioManager() {
 
                 <div className="flex items-center justify-center">
                     {view === "form" && <PortfolioForm onSubmit={onSubmit} />}
+
+                    {/* fix this later by removing this */}
+                    {view === "loading" && <Loader />}
+
                     {view === "recommended" && portfolioSummary && (
                         <RecommendedPortfolio
                             portfolioSummary={portfolioSummary}
