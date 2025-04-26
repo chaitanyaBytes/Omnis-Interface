@@ -11,6 +11,7 @@ import { useVaultStore } from "@/store/useVaultStore"
 import { StrategyRisk } from "./strategy-risk/strategy-and-risk"
 import { Postion } from "./position/position"
 import { AsterApiInput } from "./aster-api-input/aster-key-input"
+import { useAccount } from "wagmi"
 
 interface VaultDetailProps {
     vaultId: string
@@ -20,11 +21,35 @@ export default function VaultDetail({ vaultId }: VaultDetailProps) {
     const vault = useVaultStore((state) => state.vault);
     const loading = useVaultStore((state) => state.loading);
     const fetchVault = useVaultStore((state) => state.fetchVault);
-    const [, setSeletedTab] = useState("vault-performance");
+    const [, setSelectedTab] = useState("vault-performance");
+
+    const { address } = useAccount()
+    const [hasRegisteredKeys, setHasRegisteredKeys] = useState<boolean | null>(null);
 
     useEffect(() => {
         fetchVault(vaultId);
     }, [vaultId, fetchVault]);
+
+    useEffect(() => {
+        const checkKeys = async () => {
+            try {
+                const res = await fetch("/api/check-aster-keys", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({ wallet_address: address }), // replace this properly
+                });
+                const data = await res.json();
+                setHasRegisteredKeys(data.registered);
+            } catch (err) {
+                console.error("Failed to check keys", err);
+                setHasRegisteredKeys(false);
+            }
+        };
+
+        checkKeys();
+    }, []);
 
     if (loading) return <p className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">Loading...</p>;
     if (!vault) return <p className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">Vault not found.</p>;
@@ -35,7 +60,7 @@ export default function VaultDetail({ vaultId }: VaultDetailProps) {
                 <VaultHeader vaultName={vault.name} highestApy={vault.highestApy} totalTvl={vault.totalTvl} capacity={vault.capacity} />
 
                 <div className="space-y-6">
-                    <Tabs defaultValue="vault-performance" className="w-full" onValueChange={setSeletedTab}>
+                    <Tabs defaultValue="vault-performance" className="w-full" onValueChange={setSelectedTab}>
                         <TabsList className="bg-transparent flex flex-row gap-2 max-w-[38rem] w-full rounded-none justify-start h-auto p-0 overflow-x-scroll overscroll-x-auto scroll-smooth [scrollbar-width:none]">
                             <TabsTrigger
                                 value="vault-performance"
@@ -86,9 +111,9 @@ export default function VaultDetail({ vaultId }: VaultDetailProps) {
             </div>
 
             <div className="col-span-3 lg:col-span-1 space-y-2">
-                <DepositWaithrawlCard />
+                {!hasRegisteredKeys && <AsterApiInput />}
 
-                <AsterApiInput />
+                {hasRegisteredKeys && <DepositWaithrawlCard />}
             </div>
         </div>
     )

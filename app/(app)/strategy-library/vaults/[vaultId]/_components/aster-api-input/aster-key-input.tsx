@@ -39,9 +39,13 @@ export const AsterApiInput = () => {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
-            <div className="bg-white p-4 space-y-2 rounded-2xl">
-                <div className="space-y-1">
+        <form onSubmit={handleSubmit} className="rounded-2xl bg-[#F8F9FC]">
+            <div className="p-4 space-y-6 rounded-2xl">
+                <div className="text-2xl text-[#1C274C] font-semibold">
+                    Register Aster API Keys
+                </div>
+
+                <div className="space-y-2">
                     <Label>Aster API Key</Label>
                     <Input
                         type="text"
@@ -51,7 +55,7 @@ export const AsterApiInput = () => {
                     />
                 </div>
 
-                <div className="space-y-1">
+                <div className="space-y-2">
                     <Label>Aster secret API Key</Label>
                     <Input
                         type="text"
@@ -63,7 +67,7 @@ export const AsterApiInput = () => {
 
                 <Button
                     type="submit"
-                    className="cursor-pointer"
+                    className="cursor-pointer bg-[#363F72] hover:bg-[#363F72]/90 w-full"
                     disabled={loading || !asterAPIkey || !asterSecretAPIkey}
 
                 >
