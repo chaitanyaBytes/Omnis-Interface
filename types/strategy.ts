@@ -6,7 +6,7 @@ export interface StrategyInterface {
     currentTVL: number;
     maxCapacity: number;
     network: string;
-    status: "HOT" | "NEW" | "EXCLUSIVE";
+    status: "HOT" | "NEW" | null;
 
     // Performance Metrics
     capacity: number;
