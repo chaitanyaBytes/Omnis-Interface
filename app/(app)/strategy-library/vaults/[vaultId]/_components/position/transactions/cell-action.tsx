@@ -8,7 +8,7 @@ interface CellActionProps {
 
 export const CellAction = ({ tx }: CellActionProps) => {
     return (
-        <Link href={`https://explorer.solana.com/tx/${tx}`} className="flex gap-2">
+        <Link href={`https://bscscan.com/tx/${tx}`} className="flex gap-2">
             <Eye />
             <p>View</p>
         </Link>

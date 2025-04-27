@@ -7,11 +7,11 @@ export const Strategy = () => {
         <div className="space-y-10">
             <div className="bg-[#F4F7FF] space-y-4 rounded-lg py-4 px-5">
                 <div className="space-y-1">
-                    <h1 className="font-medium text-2xl"> Normal Grid Yield Generation</h1>
-                    <p className="text-muted-foreground">The xUSDT Vault employs an AI-driven strategy to optimize yields by grid strategies.</p>
+                    <h1 className="font-medium text-2xl"> Strategy Profile </h1>
+                    {/* <p className="text-muted-foreground">The xUSDT Vault employs an AI-driven strategy to optimize yields by grid strategies.</p> */}
                 </div>
 
-                <div className="grid grid-cols-2 lg:grid-cols-4">
+                <div className="grid grid-cols-2 lg:grid-cols-3">
                     <div>
                         <p className="text-muted-foreground">Target Leverage</p>
                         <p className="text-xl font-medium">1x</p>
@@ -27,10 +27,10 @@ export const Strategy = () => {
                         <p className="text-xl font-medium">Automatic</p>
                     </div>
 
-                    <div>
+                    {/* <div>
                         <p className="text-muted-foreground">Strategy Type</p>
                         <p className="text-xl font-medium">Grid Trading</p>
-                    </div>
+                    </div> */}
                 </div>
             </div>
 

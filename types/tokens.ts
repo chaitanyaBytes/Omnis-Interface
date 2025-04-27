@@ -1,9 +1,8 @@
-export const tokens = ["USDC", "USDT", "ETH", "BTC", "SOL"]
+export const tokens = ["USDT", "BNB", "ETH", "BTC"]
 
 export enum Tokens {
-    USDC = "USDC",
     USDT = "USDT",
+    BNB = "BNB",
     ETH = "ETH",
     BTC = "BTC",
-    SOL = "SOL"
 }
