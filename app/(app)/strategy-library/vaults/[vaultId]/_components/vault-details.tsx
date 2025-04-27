@@ -116,7 +116,7 @@ export default function VaultDetail({ vaultId }: VaultDetailProps) {
 
                 {hasRegisteredKeys && <DepositWaithrawlCard />}
 
-                {<UserInstrctions />}
+                {!hasRegisteredKeys && <UserInstrctions />}
             </div>
         </div>
     )

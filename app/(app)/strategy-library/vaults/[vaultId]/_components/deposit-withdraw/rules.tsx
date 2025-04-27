@@ -16,9 +16,9 @@ export const DepositRules = () => {
         <p>1-day lock for withdrawls</p>
       </div>
       {/* <div className="flex gap-2 items-center">
-                <Info size={16} />
-                <p>20% performance fee on exit</p>
-            </div> */}
+        <Info size={16} />
+        <p>20% performance fee on exit</p>
+      </div> */}
     </div>
   );
 };
