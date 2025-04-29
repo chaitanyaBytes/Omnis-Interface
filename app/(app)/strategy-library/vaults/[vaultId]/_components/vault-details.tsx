@@ -32,6 +32,12 @@ export default function VaultDetail({ vaultId }: VaultDetailProps) {
     }, [vaultId, fetchVault]);
 
     useEffect(() => {
+        if (!hasRegisteredKeys) {
+            window.open("https://www.asterdex.com/en/api-management", "_blank")
+        }
+    }, [hasRegisteredKeys])
+
+    useEffect(() => {
         const checkKeys = async () => {
             try {
                 const res = await fetch("/api/check-aster-keys", {

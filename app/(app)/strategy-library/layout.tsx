@@ -1,7 +1,7 @@
 "use client"
 
 import { useWalletAuth } from "@/hooks/useWalletAuth";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { ReactNode, useEffect } from "react";
 import { StrategyLibrarySkeleton } from "./_components/skeleton";
 import { AsterAPIProvider } from "./vaults/[vaultId]/_context/aster-api-context";
@@ -10,12 +10,13 @@ import { AsterAPIProvider } from "./vaults/[vaultId]/_context/aster-api-context"
 const Layout = ({ children }: { children: ReactNode }) => {
     const { isLoading, shouldRedirect } = useWalletAuth()
     const router = useRouter();
+    const pathname = usePathname()
 
     useEffect(() => {
-        if (shouldRedirect) {
+        if (shouldRedirect && pathname !== "/sign-in") {
             router.replace("/sign-in")
         }
-    }, [shouldRedirect])
+    }, [shouldRedirect, router, pathname])
 
     if (isLoading) {
         return <StrategyLibrarySkeleton />

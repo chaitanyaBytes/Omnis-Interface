@@ -14,7 +14,7 @@ import { toast } from "sonner"
 import { useUsdtBalance } from "@/hooks/useUsdtBalance"
 
 export const WithdrawlCard = () => {
-    const [amount, setAmount] = useState("");
+    // const [amount, setAmount] = useState("");
     const { address } = useAccount()
     const { formatted, isLoading } = useUsdtBalance()
     const { withdraw, loading, error } = useWithdraw();
@@ -31,7 +31,7 @@ export const WithdrawlCard = () => {
         }
 
         console.log(address);
-        console.log(amount);
+        // console.log(amount);
 
         try {
             await withdraw({
@@ -45,16 +45,16 @@ export const WithdrawlCard = () => {
 
     return (
         <form onSubmit={handleSubmit}>
-            <div className="relative border border-zinc-600/90 rounded-lg px-4 py-2">
-                <input
+            {/* <div className="relative border border-zinc-600/90 rounded-lg px-4 py-2"> */}
+            {/* <input
                     type="number"
                     value={amount}
                     onChange={(e) => setAmount(e.target.value)}
                     placeholder="0.00"
                     className="text-2xl font-semibold border-none outline-none appearance-textfield [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                 />
-                {!amount ? <Icons.usdt className="absolute right-2 bottom-1/4 w-6 h-6" /> : <X onClick={() => setAmount("")} className="absolute right-2 bottom-1/4 w-6 h-6 p-1 cursor-pointer text-zinc-800 rounded-full border border-zinc-700" />}
-            </div>
+                {!amount ? <Icons.usdt className="absolute right-2 bottom-1/4 w-6 h-6" /> : <X onClick={() => setAmount("")} className="absolute right-2 bottom-1/4 w-6 h-6 p-1 cursor-pointer text-zinc-800 rounded-full border border-zinc-700" />} */}
+            {/* </div> */}
 
             {/* <div className="flex items-center justify-between my-2">
                 <div className="flex gap-2 text-lg">
@@ -65,7 +65,7 @@ export const WithdrawlCard = () => {
             </div> */}
 
             <div className="space-y-1 mt-6">
-                <div className="flex flex-row justify-between items-center">
+                {/* <div className="flex flex-row justify-between items-center">
                     <p className="text-muted-foreground">Your Current Balance</p>
                     <p className="">{formatCurrency(currBalance)}</p>
                 </div>
@@ -89,15 +89,16 @@ export const WithdrawlCard = () => {
                         }
                         <Icons.usdt className="w-4 h-4" />
                     </div>
-                </div>
+                </div> */}
 
                 <Button
                     type="submit"
-                    disabled={!amount}
-                    className={`w-full border border-zinc-600/80 text-md py-5 my-6 ${amount
-                        ? "bg-[#363F72] hover:bg-blue-500 cursor-pointer"
-                        : "bg-zinc-600 hover:bg-zinc-800"
-                        }`}
+                    // disabled={!amount}
+                    // className={`w-full border border-zinc-600/80 text-md py-5 my-6 ${amount
+                    //     ? "bg-[#363F72] hover:bg-blue-500 cursor-pointer"
+                    //     : "bg-zinc-600 hover:bg-zinc-800"
+                    //     }`}
+                    className={`w-full border border-zinc-600/80 text-md py-5 my-6 bg-[#363F72] hover:bg-blue-500 cursor-pointer`}
                 >
                     Remove Funds
                 </Button>

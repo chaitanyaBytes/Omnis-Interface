@@ -3,6 +3,9 @@
 // 777bb47731e4d59d354230be0bcb0fe29f48ba1973baa5d9e85dfe3971203593
 // a8a6d493c9b01323ddd5b456e8cef5ecab6f5117e92d0f9726167966337698ed
 
+// ec18b57a6535d5596991d37c8b15af09e58d2fc07a0bed1847931aff2cc69961
+// ec18b57a6535d5596991d37c8b15af09e58d2fc07a0bed1847931aff2cc69961
+
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { useAsterAPI } from "../../_context/aster-api-context"
@@ -33,6 +36,7 @@ export const AsterApiInput = () => {
                 secret_key: asterSecretAPIkey,
             });
             toast.success("Keys registered successfully!");
+            window.location.reload();
         } catch (err) {
             toast.error(`Error: ${error || 'An error occurred'}`);
         }

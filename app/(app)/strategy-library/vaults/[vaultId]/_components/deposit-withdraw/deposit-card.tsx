@@ -82,7 +82,7 @@ export const DepositCard = () => {
                 </div> */}
 
                 <div className="space-y-1 mt-6">
-                    <div className="flex flex-row justify-between items-center">
+                    {/* <div className="flex flex-row justify-between items-center">
                         <p className="text-muted-foreground">Your Current Balance</p>
                         <p className="">{formatCurrency(vaultBalance)}</p>
                     </div>
@@ -106,7 +106,7 @@ export const DepositCard = () => {
                             }
                             <Icons.usdt className="w-4 h-4" />
                         </div>
-                    </div>
+                    </div> */}
 
                     <Button
                         type="submit"
