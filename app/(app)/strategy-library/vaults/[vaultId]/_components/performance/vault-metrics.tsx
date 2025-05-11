@@ -9,7 +9,7 @@ export default function VaultMetrics() {
                 <div className="flex flex-row items-start gap-2">
                     <div>
                         <h3 className="text-sm text-gray-400">APY (44 days)</h3>
-                        <p className="text-[var(--vault-page-primary)] text-2xl font-semibold">{vault?.apy}%</p>
+                        <p className="text-[var(--vault-page-primary)] text-2xl font-semibold">{vault?.apy}</p>
                     </div>
                 </div>
             </div>
@@ -17,7 +17,7 @@ export default function VaultMetrics() {
                 <div className="flex flex-row items-start gap-2">
                     <div>
                         <h3 className="text-sm text-gray-400">TVL</h3>
-                        <p className=" text-2xl font-semibold">${vault?.capacity}</p>
+                        <p className=" text-2xl font-semibold">${vault?.capacity}K</p>
                     </div>
                 </div>
             </div>
@@ -32,8 +32,8 @@ export default function VaultMetrics() {
             <div className="">
                 <div className="flex flex-row items-start gap-2">
                     <div>
-                        <h3 className="text-sm text-gray-400">Volume (30D)</h3>
-                        <p className={`text-2xl font-semibold`}>{vault?.volume}</p>
+                        <h3 className="text-sm text-gray-400">Transaction Volume (30D)</h3>
+                        <p className={`text-2xl font-semibold`}>${vault?.volume}</p>
                     </div>
                 </div>
             </div>
