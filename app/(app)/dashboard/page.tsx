@@ -30,7 +30,7 @@ export default function Dashboard() {
                     <p className="text-[#363F72]">View and monitor your active portfolio strategies</p>
                 </div>
 
-                <div className="grid grid-cols-2 lg:grid-cols-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 justify-items-center">
                     <PortfolioInfoCard title={"Total Portfolio Value"} value={"$5,187.50"} status={"+3.75%"} statusColor={"#039855"} footerText={"Initial investment: $5,000.00"} />
                     <PortfolioInfoCard title={"Current Yield (APY)"} value={"16.5%"} status={"+0.3%"} statusColor={"#039855"} footerText={"vs. 16.2% last week"} />
                     <PortfolioInfoCard title={"Total Profit"} value={"$187.50"} status={"+12 USDT today"} statusColor={"#039855"} footerText={"Expected monthly: ~$187.00"} />

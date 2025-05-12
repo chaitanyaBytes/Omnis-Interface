@@ -11,7 +11,7 @@ export default function Home() {
 
           <div className="flex flex-col items-center gap-2">
             {/* <logos.omnisBlack width={80} /> */}
-            <div className="mt-10 text-[4rem] font-semibold tracking-tight leading-none">
+            <div className="mt-10 text-[3rem] lg:text-[4rem] font-semibold tracking-tight leading-none">
               <p>Intelligent DeFi Portfolio Management</p>
             </div>
           </div>

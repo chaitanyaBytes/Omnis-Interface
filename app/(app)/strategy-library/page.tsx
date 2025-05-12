@@ -26,7 +26,7 @@ export default function StrategyLibrary() {
                 <div className="flex justify-between items-center flex-wrap space-y-2">
                     <SearchBar />
 
-                    <div className="flex items-center gap-4">
+                    <div className="flex items-center gap-4 flex-wrap">
                         <StrategyFilter />
                         <StrategySort />
                     </div>

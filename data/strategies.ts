@@ -7,11 +7,11 @@ export const dummyStrategies: StrategyInterface[] = [
         strategy: "Earn Aster Rh Points",
         apy: "5.5%",
         currentTVL: 11317930.10,
-        maxCapacity: 26000000,
+        maxCapacity: 260000,
         network: "Binance",
         status: "NEW",
         capacity: 43.5, // Approximate percentage (currentTVL / maxCapacity * 100)
-        maxCap: 26000000, // Same as maxCapacity
+        maxCap: 260000, // Same as maxCapacity
         // --- Other Plausible Demo Metrics ---
         highestApy: 6.1, // Slightly higher "peak" APY/Point Rate for demo appeal
         dailyDrawdown: 0.15, // % - Plausible small daily fluctuation/cost percentage for demo
@@ -36,12 +36,12 @@ export const dummyStrategies: StrategyInterface[] = [
         strategy: "Uses equal price steps",
         apy: "13.85%",
         currentTVL: 738342.05,
-        maxCapacity: 1000000,
+        maxCapacity: 10000,
         network: "Binance",
         status: "HOT",
         // --- Calculated/Derived ---
         capacity: 73.8, // Approximate percentage (currentTVL / maxCapacity * 100)
-        maxCap: 1000000, // Same as maxCapacity
+        maxCap: 10000, // Same as maxCapacity
         // --- Other Plausible Demo Metrics ---
         highestApy: 15.2, // % - Slightly higher peak APY for demo
         dailyDrawdown: 0.45, // % - Plausible daily fluctuation if price moves within the grid against open orders
@@ -66,12 +66,12 @@ export const dummyStrategies: StrategyInterface[] = [
         apy: "17.33%",
 
         currentTVL: 548342.05,
-        maxCapacity: 1000000,
+        maxCapacity: 10000,
         network: "Binance",
         status: "HOT",
         // --- Calculated/Derived ---
         capacity: 79.0, // Approximate percentage (currentTVL / maxCapacity * 100)
-        maxCap: 500000, // Same as maxCapacity
+        maxCap: 50000, // Same as maxCapacity
 
         // --- Other Plausible Demo Metrics ---
         highestApy: 18.5, // % - Slightly higher peak APY for demo

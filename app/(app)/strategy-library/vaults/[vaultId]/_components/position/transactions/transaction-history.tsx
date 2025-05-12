@@ -7,7 +7,7 @@ export const TransactionHistory = () => {
 
     return (
         <div>
-            <div className="text-2xl">
+            <div className="text-lg md:text-2xl">
                 Transaction History
             </div>
 

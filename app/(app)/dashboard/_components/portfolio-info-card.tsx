@@ -17,7 +17,7 @@ interface PortfolioInfoCardProps {
 
 export function PortfolioInfoCard({ title, value, status, statusColor, footerText, ...props }: PortfolioInfoCardProps) {
     return (
-        <Card className={cn("w-64 gap-1")} {...props}>
+        <Card className={cn("w-full gap-1")} {...props}>
             <CardHeader>
                 <CardTitle className="text-[#363F72] text-sm font-medium">{title}</CardTitle>
             </CardHeader>

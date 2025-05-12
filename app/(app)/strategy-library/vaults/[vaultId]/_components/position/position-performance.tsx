@@ -13,10 +13,10 @@ export const PositonPerformance = () => {
     return (
         <div>
             <Tabs defaultValue="30D" onValueChange={(value) => setSelectedTimeRange(value as TimeRange)}>
-                <h2 className="text-2xl mb-1">Position Performance</h2>
+                <h2 className="text-lg md:text-2xl">Position Performance</h2>
 
-                <div className="flex flex-row flex-wrap items-center justify-between gap-6">
-                    <p>Value</p>
+                <div className="flex flex-row flex-wrap items-center justify-between gap-2">
+                    <p className="text-muted-foreground text-sm md:text-base">Value</p>
 
                     <div>
                         <TabsList className="grid grid-cols-5">
@@ -26,7 +26,7 @@ export const PositonPerformance = () => {
                 </div>
 
                 <TabsContent value={selectedTimeRange}>
-                    <div className="mt-4 h-[300px]">
+                    <div className="mt-2 h-[300px]">
                         <PositionChart timeRange={selectedTimeRange} />
                     </div>
                 </TabsContent>

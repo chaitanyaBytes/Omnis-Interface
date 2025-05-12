@@ -60,10 +60,10 @@ export function DataTable<TData, TValue>({
                     onChange={(event) =>
                         table.getColumn(searchKey)?.setFilterValue(event.target.value)
                     }
-                    className="max-w-sm"
+                    className="max-w-sm text-sm md:text-base"
                 />
             </div>
-            <div className="rounded-md border">
+            <div className="rounded-md border text-sm md:text-base">
                 <Table>
                     <TableHeader>
                         {table.getHeaderGroups().map((headerGroup) => (

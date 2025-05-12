@@ -68,31 +68,31 @@ export default function VaultDetail({ vaultId }: VaultDetailProps) {
 
                 <div className="space-y-6">
                     <Tabs defaultValue="vault-performance" className="w-full" onValueChange={setSelectedTab}>
-                        <TabsList className="bg-transparent flex flex-row gap-2 max-w-[38rem] w-full rounded-none justify-start h-auto p-0 overflow-x-scroll overscroll-x-auto scroll-smooth [scrollbar-width:none]">
+                        <TabsList className="bg-transparent flex flex-row gap-2 max-w-[38rem] text-base md:text-lg w-full rounded-none justify-start h-auto p-0 overflow-x-scroll overscroll-x-auto scroll-smooth [scrollbar-width:none]">
                             <TabsTrigger
                                 value="vault-performance"
-                                className="px-4 py-2 text-lg data-[state=active]:border-b-2 data-[state=active]:border-black data-[state=active]:bg-muted/40 cursor-pointer rounded-none"
+                                className="px-4 py-2 data-[state=active]:border-b-2 data-[state=active]:border-black data-[state=active]:bg-muted/40 cursor-pointer rounded-none"
                             >
                                 Performance
                             </TabsTrigger>
 
                             <TabsTrigger
                                 value="strategy-risk"
-                                className="px-4 py-2 text-lg data-[state=active]:border-b-2 data-[state=active]:border-black data-[state=active]:bg-muted/40 cursor-pointer rounded-none"
+                                className="px-4 py-2 data-[state=active]:border-b-2 data-[state=active]:border-black data-[state=active]:bg-muted/40 cursor-pointer rounded-none"
                             >
                                 Strategy & risk
                             </TabsTrigger>
 
                             <TabsTrigger
                                 value="your-position"
-                                className="px-4 py-2 text-lg data-[state=active]:border-b-2 data-[state=active]:border-black data-[state=active]:bg-muted/40 cursor-pointer rounded-none"
+                                className="px-4 py-2 data-[state=active]:border-b-2 data-[state=active]:border-black data-[state=active]:bg-muted/40 cursor-pointer rounded-none"
                             >
                                 Your Position
                             </TabsTrigger>
 
                             <TabsTrigger
                                 value="how-it-works"
-                                className="px-4 py-2 text-lg data-[state=active]:border-b-2 data-[state=active]:border-black data-[state=active]:bg-muted/40 cursor-pointer rounded-none"
+                                className="px-4 py-2 data-[state=active]:border-b-2 data-[state=active]:border-black data-[state=active]:bg-muted/40 cursor-pointer rounded-none"
                             >
                                 How it works
                             </TabsTrigger>
@@ -117,7 +117,7 @@ export default function VaultDetail({ vaultId }: VaultDetailProps) {
                 </div>
             </div>
 
-            <div className="col-span-3 lg:col-span-1 space-y-2">
+            <div className="hidden lg:block col-span-1 space-y-2">
                 {!hasRegisteredKeys && <AsterApiInput />}
 
                 {hasRegisteredKeys && <DepositWaithrawlCard />}

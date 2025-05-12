@@ -7,7 +7,7 @@ export default async function Page({
 }) {
     const { vaultId } = await params
     return (
-        <div className="max-w-[90rem] mx-auto px-4">
+        <div className="max-w-[90rem] mx-auto px-2 md:px-4">
             <VaultDetail vaultId={vaultId} />
         </div>
     )
