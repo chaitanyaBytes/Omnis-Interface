@@ -13,6 +13,8 @@ import { Postion } from "./position/position"
 import { AsterApiInput } from "./aster-api-input/aster-key-input"
 import { useAccount } from "wagmi"
 import { UserInstrctions } from "./user-instructions"
+import { Plus } from "lucide-react"
+import { Drawer, DrawerTrigger, DrawerContent } from "@/components/ui/drawer"
 
 interface VaultDetailProps {
     vaultId: string
@@ -26,6 +28,7 @@ export default function VaultDetail({ vaultId }: VaultDetailProps) {
 
     const { address } = useAccount()
     const [hasRegisteredKeys, setHasRegisteredKeys] = useState<boolean | null>(null);
+    const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
     useEffect(() => {
         fetchVault(vaultId);
@@ -57,6 +60,12 @@ export default function VaultDetail({ vaultId }: VaultDetailProps) {
 
         checkKeys();
     }, []);
+
+    useEffect(() => {
+        if (!hasRegisteredKeys) {
+            setIsDrawerOpen(true);
+        }
+    }, [hasRegisteredKeys]);
 
     if (loading) return <p className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">Loading...</p>;
     if (!vault) return <p className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">Vault not found.</p>;
@@ -124,6 +133,25 @@ export default function VaultDetail({ vaultId }: VaultDetailProps) {
 
                 {!hasRegisteredKeys && <UserInstrctions />}
             </div>
+
+            <Drawer open={isDrawerOpen} onOpenChange={setIsDrawerOpen}>
+                <DrawerTrigger asChild>
+                    <div className="md:hidden fixed bottom-6 right-6 rounded-full bg-[#363F72] p-2 shadow-2xl shadow-blue-900 cursor-pointer">
+                        <Plus size={30} color="white" />
+                    </div>
+                </DrawerTrigger>
+                <DrawerContent>
+                    <div className="mx-auto w-full max-w-sm">
+                        <div className="col-span-1 space-y-2">
+                            {!hasRegisteredKeys && <AsterApiInput />}
+
+                            {hasRegisteredKeys && <DepositWaithrawlCard />}
+
+                            {!hasRegisteredKeys && <UserInstrctions />}
+                        </div>
+                    </div>
+                </DrawerContent>
+            </Drawer>
         </div>
     )
 }

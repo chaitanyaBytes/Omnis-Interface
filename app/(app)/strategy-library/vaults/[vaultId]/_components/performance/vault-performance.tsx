@@ -15,8 +15,8 @@ export const VaultPerformance = () => {
             <VaultMetrics />
 
             <Tabs defaultValue="30D" onValueChange={(value) => setSelectedTimeRange(value as TimeRange)}>
-                <div className="flex flex-row flex-wrap items-center justify-between gap-6">
-                    <p>Vault Price</p>
+                <div className="flex flex-row flex-wrap items-center justify-between gap-2">
+                    <p className="text-muted-foreground text-sm md:text-base">Share Price</p>
 
                     <div>
                         <TabsList className="grid grid-cols-5">
