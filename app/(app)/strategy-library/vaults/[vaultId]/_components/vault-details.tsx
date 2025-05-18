@@ -34,11 +34,11 @@ export default function VaultDetail({ vaultId }: VaultDetailProps) {
         fetchVault(vaultId);
     }, [vaultId, fetchVault]);
 
-    useEffect(() => {
-        if (!hasRegisteredKeys) {
-            window.open("https://www.asterdex.com/en/api-management", "_blank")
-        }
-    }, [hasRegisteredKeys])
+    // useEffect(() => {
+    //     if (!hasRegisteredKeys) {
+    //         window.open("https://www.asterdex.com/en/api-management", "_blank")
+    //     }
+    // }, [hasRegisteredKeys])
 
     useEffect(() => {
         const checkKeys = async () => {
